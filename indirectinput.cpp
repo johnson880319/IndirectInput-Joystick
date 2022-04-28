@@ -35,6 +35,10 @@ HRESULT __stdcall IndirectInput::EnumDevices(DWORD dwDevType, LPDIENUMDEVICESCAL
     //
 
     HRESULT hr = _directInput->EnumDevices(DIDEVTYPE_JOYSTICK, lpCallback, pvRef, dwFlags);
+    if (SUCCEEDED(hr))
+    {
+        hr = _directInput->EnumDevices(DIDEVTYPE_KEYBOARD, lpCallback, pvRef, dwFlags);
+    }
     return hr;
 }
 
