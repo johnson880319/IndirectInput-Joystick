@@ -34,11 +34,7 @@ HRESULT __stdcall IndirectInput::EnumDevices(DWORD dwDevType, LPDIENUMDEVICESCAL
     // circa 1996 [DirectInput 3.0 API (September 11, 1996, v1.0, DINPUT3E.DOC)]
     //
 
-    HRESULT hr = _directInput->EnumDevices(DIDEVTYPE_KEYBOARD, lpCallback, pvRef, dwFlags);
-    if (SUCCEEDED(hr))
-    {
-        hr = _directInput->EnumDevices(DIDEVTYPE_MOUSE, lpCallback, pvRef, dwFlags);
-    }
+    HRESULT hr = _directInput->EnumDevices(DIDEVTYPE_JOYSTICK, lpCallback, pvRef, dwFlags);
     return hr;
 }
 
